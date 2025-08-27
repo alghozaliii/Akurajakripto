@@ -1,1 +1,3 @@
+FROM node:18-alpine
+
 # ...empty file...
