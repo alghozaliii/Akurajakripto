@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import Beranda from './pages/Beranda';
 import Dashboard from './pages/Dashboard';
 import Pricing from './pages/Pricing';
+import Community from './pages/community';
 import ApiAccess from './pages/ApiAccess';
 import Blog from './pages/Blog';
 import Faq from './pages/Faq';
@@ -26,6 +27,7 @@ function App() {
               <Route path="/home" element={<HomePage />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/community" element={<Community />} />
               <Route path="/api-access" element={<ApiAccess />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/faq" element={<Faq />} />

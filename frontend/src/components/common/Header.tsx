@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         <div className="site-header__inner">
           <Link to="/" className="site-header__logo" aria-label="CryptoPredict ID home">
             <div className="logo-box"><span>A</span></div>
-            <div className="logo-text"><strong>CryptoPredict ID</strong><small>Insight & Sentiment</small></div>
+            <div className="logo-text"><strong>JaliinCrypto</strong><small>Insight & Sentiment</small></div>
           </Link>
           <div className="site-header__search">
             <input placeholder="Search (Ctrl+K)" aria-label="Search" />
