@@ -18,24 +18,27 @@ const CryptoWatchlist: React.FC<CryptoWatchlistProps> = ({ symbols = [] }) => {
   const cryptoList = symbols.length > 0 ? symbols : defaultSymbols;
 
   return (
-    <div className="tv-card">
-      <h3 className="text-lg font-semibold text-tv-text mb-2">Watchlist (Top 5)</h3>
-      <p className="text-xs text-tv-text-secondary mb-4">Fokus MVP: 5 aset utama pasar Indonesia</p>
-      <div className="space-y-2">
+    <div className="bg-[#181c23] rounded-2xl shadow-lg p-6 border border-tv-border max-w-md mx-auto">
+      <h3 className="text-xl font-bold text-tv-text mb-3 tracking-tight">Watchlist (Top 5)</h3>
+      <p className="text-xs text-tv-text-secondary mb-6">Fokus MVP: 5 aset utama pasar Indonesia</p>
+      <div className="flex flex-col gap-3">
         {cryptoList.map((crypto) => (
-          <div key={crypto.symbol} className="flex items-center justify-between p-3 hover:bg-tv-border rounded transition-colors cursor-pointer">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-tv-blue rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">{crypto.symbol.slice(0, 2)}</span>
+          <div
+            key={crypto.symbol}
+            className="flex items-center justify-between px-4 py-3 bg-[#20242c] rounded-xl border border-transparent hover:border-tv-blue hover:shadow transition-all cursor-pointer group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-tv-blue rounded-full flex items-center justify-center shadow-md">
+                <span className="text-white text-base font-bold tracking-wide">{crypto.symbol.slice(0, 2)}</span>
               </div>
               <div>
-                <div className="text-tv-text font-medium">{crypto.symbol}</div>
-                <div className="text-tv-text-secondary text-sm">{crypto.name}</div>
+                <div className="text-tv-text font-semibold text-base leading-tight">{crypto.symbol}</div>
+                <div className="text-tv-text-secondary text-xs">{crypto.name}</div>
               </div>
             </div>
-            <div className="text-right">
-              <div className="text-tv-text font-medium">${crypto.price.toLocaleString()}</div>
-              <div className={`text-sm ${crypto.change24hPercent >= 0 ? 'text-tv-green' : 'text-tv-red'}`}>
+            <div className="text-right min-w-[90px]">
+              <div className="text-tv-text font-bold text-base">${crypto.price.toLocaleString()}</div>
+              <div className={`text-xs font-semibold ${crypto.change24hPercent >= 0 ? 'text-tv-green' : 'text-tv-red'} group-hover:underline`}>
                 {crypto.change24hPercent >= 0 ? '+' : ''}{crypto.change24hPercent.toFixed(2)}%
               </div>
             </div>
