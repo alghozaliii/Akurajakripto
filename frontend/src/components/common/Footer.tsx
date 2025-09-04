@@ -1,138 +1,193 @@
 import * as React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-gradient-to-b from-[#1a1b1e] via-[#141517] to-[#0d0e10] text-white pt-16 pb-8 mt-16 font-sans relative">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-30"></div>
-            <div className="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap justify-between items-start gap-12 px-6">
-                {/* Brand & Newsletter */}
-                <div className="flex-1 min-w-[300px] mb-8 md:mb-0">
-                    <div className="flex items-center gap-3 mb-4 group cursor-pointer">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-all duration-300">
-                            <span className="text-2xl font-bold text-white">A</span>
+        <>
+            <footer className="site-footer">
+                <div className="site-footer__accent-border"></div>
+                
+                <div className="site-footer__content">
+                    <div className="site-footer__main">
+                        {/* Company info */}
+                        <div className="company-info">
+                            <Link to="/" className="company-logo">
+                                <div className="logo-box"><span>A</span></div>
+                                <div className="logo-text"><strong>Crypto</strong></div>
+                            </Link>
+                            <p className="company-description">
+                                Platform edukasi & informasi kripto terkemuka di Indonesia. Temukan berita terbaru,
+                                analisis pasar, dan panduan investasi crypto yang akurat.
+                            </p>
+                            
+                            {/* Newsletter */}
+                            <div className="newsletter-box">
+                                <h3>Berlangganan Newsletter</h3>
+                                <form onSubmit={e => e.preventDefault()}>
+                                    <input 
+                                        type="email" 
+                                        placeholder="Email Anda" 
+                                        aria-label="Email address"
+                                    />
+                                    <button 
+                                        type="submit"
+                                        aria-label="Subscribe"
+                                    >
+                                        Langganan
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                        <h2 className="text-2xl font-extrabold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-purple-400 group-hover:to-blue-400 transition-all duration-300">AkuRajaCrypto</h2>
-                    </div>
-                    <p className="text-sm text-gray-300 leading-relaxed mb-6 max-w-md">Platform edukasi & informasi kripto terbaik di Indonesia. Temukan prediksi, analisis, dan berita terbaru dunia crypto.</p>
-                    <div className="bg-[#1c1d21] rounded-2xl p-4 shadow-xl backdrop-blur-sm border border-gray-800/50">
-                        <h3 className="text-sm font-semibold mb-3 text-gray-200">Dapatkan Update Terbaru</h3>
-                        <form className="flex flex-col gap-3" onSubmit={e => e.preventDefault()}>
-                            <input 
-                                type="email" 
-                                placeholder="Masukkan email Anda..." 
-                                className="w-full px-4 py-3 rounded-xl bg-[#262830] text-white text-sm border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-300 placeholder-gray-500"
-                            />
-                            <button 
-                                type="submit" 
-                                className="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-medium hover:from-purple-500 hover:to-blue-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
-                            >
-                                Langganan Newsletter
-                            </button>
-                        </form>
-                        <p className="text-xs text-gray-500 mt-3">Dapatkan info & tips kripto terbaru (bebas spam)</p>
-                    </div>
-                </div>
-                {/* Navigation & Links */}
-                <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 flex-1 min-w-[280px]">
-                    <nav className="space-y-6">
-                        <div>
-                            <h3 className="font-semibold mb-4 text-lg bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Navigasi</h3>
-                            <ul className="space-y-3 text-sm">
-                                <li>
-                                    <a href="/" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-400"></span>
-                                        <span>Beranda</span>
+                        
+                        {/* Navigation & Links */}
+                        <div className="footer-nav">
+                            {/* Links column 1 */}
+                            <div className="footer-nav__column">
+                                <h3>Navigasi</h3>
+                                <ul>
+                                    <li><Link to="/">Beranda</Link></li>
+                                    <li><Link to="/blog">Blog</Link></li>
+                                    <li><Link to="/market">Market</Link></li>
+                                    <li><Link to="/about">Tentang Kami</Link></li>
+                                </ul>
+                            </div>
+                            
+                            {/* Links column 2 */}
+                            <div className="footer-nav__column">
+                                <h3>Layanan</h3>
+                                <ul>
+                                    <li><Link to="/signals">Sinyal Trading</Link></li>
+                                    <li><Link to="/education">Edukasi</Link></li>
+                                    <li><Link to="/premium">Premium</Link></li>
+                                    <li><Link to="/faq">FAQ</Link></li>
+                                </ul>
+                            </div>
+                            
+                            {/* Contact info */}
+                            <div className="footer-nav__column">
+                                <h3>Kontak</h3>
+                                <ul className="contact-list">
+                                    <li>
+                                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                        </svg>
+                                        <a href="mailto:info@akurajakripto.com">info@akurajakripto.com</a>
+                                    </li>
+                                    <li>
+                                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                        </svg>
+                                        <span>+62 812-3456-7890</span>
+                                    </li>
+                                </ul>
+                                
+                                {/* Social links */}
+                                <div className="social-links">
+                                    <a href="#" aria-label="Twitter">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.531A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                        </svg>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="/about" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-400"></span>
-                                        <span>Tentang Kami</span>
+                                    <a href="#" aria-label="Facebook">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"/>
+                                        </svg>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="/blog" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-400"></span>
-                                        <span>Blog</span>
+                                    <a href="#" aria-label="Instagram">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"/>
+                                        </svg>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="/faq" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-400"></span>
-                                        <span>FAQ</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div className="space-y-6">
-                        <div>
-                            <h3 className="font-semibold mb-4 text-lg bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Layanan</h3>
-                            <ul className="space-y-3 text-sm">
-                                <li>
-                                    <a href="/api-access" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-400"></span>
-                                        <span>API Access</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/community" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-400"></span>
-                                        <span>Komunitas</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pricing" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-400"></span>
-                                        <span>Harga</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/dashboard" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 group-hover:bg-blue-400"></span>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                {/* Social & Contact */}
-                <div className="flex-1 min-w-[180px]">
-                    <p className="font-semibold mb-3 text-lg">Ikuti & Kontak</p>
-                    <div className="flex gap-4 mb-3">
-                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-tv-blue transition-colors">
-                            <svg width="24" height="24" fill="currentColor"><path d="M22.46 5.92c-.8.36-1.66.6-2.56.71a4.48 4.48 0 0 0 1.97-2.48 8.94 8.94 0 0 1-2.83 1.08 4.48 4.48 0 0 0-7.63 4.08A12.74 12.74 0 0 1 3.11 4.6a4.48 4.48 0 0 0 1.39 5.98c-.7-.02-1.36-.21-1.94-.53v.05a4.48 4.48 0 0 0 3.6 4.39c-.33.09-.68.14-1.04.14-.25 0-.5-.02-.74-.07a4.48 4.48 0 0 0 4.18 3.11A9 9 0 0 1 2 19.54a12.72 12.72 0 0 0 6.88 2.02c8.26 0 12.78-6.84 12.78-12.78 0-.2 0-.41-.02-.61a9.1 9.1 0 0 0 2.24-2.32z"/></svg>
-                        </a>
-                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-tv-blue transition-colors">
-                            <svg width="24" height="24" fill="currentColor"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.592 1.324-1.326V1.326C24 .592 23.405 0 22.675 0"/></svg>
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-tv-blue transition-colors">
-                            <svg width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.13 4.602.388 3.635 1.355 2.668 2.322 2.41 3.495 2.352 4.772.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.058 1.277.316 2.45 1.283 3.417.967.967 2.14 1.225 3.417 1.283C8.332 23.987 8.741 24 12 24c3.259 0 3.668-.013 4.948-.072 1.277-.058 2.45-.316 3.417-1.283.967-.967 1.225-2.14 1.283-3.417.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.058-1.277-.316-2.45-1.283-3.417-.967-.967-2.14-1.225-3.417-1.283C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.2-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-                        </a>
-                    </div>
-                    <div className="text-sm text-gray-400">
-                        <div className="flex items-center gap-2 mb-1">
-                            <svg width="18" height="18" fill="currentColor" className="text-tv-blue"><path d="M2 4.5A2.5 2.5 0 0 1 4.5 2h9A2.5 2.5 0 0 1 16 4.5v9A2.5 2.5 0 0 1 13.5 16h-9A2.5 2.5 0 0 1 2 13.5v-9zm2.25.75a.75.75 0 0 0-.75.75v7a.75.75 0 0 0 .75.75h9a.75.75 0 0 0 .75-.75v-7a.75.75 0 0 0-.75-.75h-9z"/></svg>
-                            <span>support@akurajakripto.com</span>
+                    
+                    {/* Bottom copyright */}
+                    <div className="site-footer__bottom">
+                        <div className="site-footer__copyright">
+                            <p>© {new Date().getFullYear()} AkuRajaCrypto. All rights reserved.</p>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <svg width="18" height="18" fill="currentColor" className="text-tv-blue"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1.003 1.003 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C7.61 22 2 16.39 2 9.5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1.003 1.003 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
-                            <span>+62 812-3456-7890</span>
+                        <div className="site-footer__links">
+                            <Link to="/privacy">Kebijakan Privasi</Link>
+                            <Link to="/terms">Syarat & Ketentuan</Link>
+                            <Link to="/disclaimer">Disclaimer</Link>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="border-t border-[#27272a] mt-12 pt-6 text-center text-sm text-gray-400 bg-[#18181b]/60 rounded-b-xl shadow-inner">
-                <div className="flex flex-col md:flex-row justify-center items-center gap-2">
-                    <span className="font-semibold text-white">© {new Date().getFullYear()} AkuRajaCrypto</span>
-                    <span className="hidden md:inline">|</span>
-                    <span>All rights reserved. Bukan nasihat investasi.</span>
+                
+                {/* Bottom warning banner */}
+                <div className="site-footer__warning">
+                    <p>
+                        Investasi kripto mengandung risiko tinggi. Kinerja masa lalu tidak menjamin hasil di masa depan.
+                        Konten pada situs ini bersifat edukatif dan bukan merupakan nasihat finansial.
+                    </p>
                 </div>
-                <div className="mt-2 text-xs leading-snug text-gray-500">Konten & prediksi hanya untuk edukasi. Kinerja masa lalu tidak menjamin hasil di masa depan. Crypto berisiko tinggi.</div>
-            </div>
-        </footer>
+            </footer>
+            <style>{`
+                .site-footer {background-color:#0f1522;color:#fff;}
+                .site-footer__accent-border {height:1px;background:linear-gradient(90deg,#2563eb,#7c3aed,#2563eb);}
+                .site-footer__content {max-width:1400px;margin:0 auto;padding:0 32px;}
+                .site-footer__main {display:flex;flex-wrap:wrap;gap:60px;padding:60px 0 40px;border-bottom:1px solid #1f2733;}
+                
+                /* Company section */
+                .company-info {width:100%;max-width:420px;}
+                .company-logo {display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-bottom:20px;}
+                .logo-box {width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;box-shadow:0 4px 14px -2px rgba(59,130,246,.5);}
+                .logo-text strong {display:block;font-size:18px;line-height:1.2;letter-spacing:.5px;font-weight:700;background:linear-gradient(90deg,#fff,#d6e3ff);-webkit-background-clip:text;color:transparent;}
+                .company-description {color:#94a3b8;margin-bottom:28px;line-height:1.6;font-size:14px;}
+                
+                /* Newsletter */
+                .newsletter-box {background:rgba(30,41,59,.6);border:1px solid #1f2937;border-radius:12px;padding:24px;backdrop-filter:blur(10px);}
+                .newsletter-box h3 {font-size:16px;font-weight:600;margin-bottom:16px;color:#e2e8f0;}
+                .newsletter-box form {display:flex;flex-direction:column;gap:12px;}
+                @media (min-width:520px) {
+                    .newsletter-box form {flex-direction:row;}
+                }
+                .newsletter-box input {flex:1;background:#1b2331;border:1px solid #2a3444;color:#e2e8f0;border-radius:12px;padding:12px 16px;font-size:14px;outline:none;transition:.25s;}
+                .newsletter-box input:focus {background:#202b3c;border-color:#3674ff;box-shadow:0 0 0 2px rgba(54,116,255,.25);}
+                .newsletter-box button {background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border:none;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 6px 18px -6px rgba(59,130,246,.55);}
+                .newsletter-box button:hover {filter:brightness(1.15);transform:translateY(-2px);}
+                
+                /* Footer nav */
+                .footer-nav {display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:40px;width:100%;max-width:700px;}
+                .footer-nav__column h3 {font-size:15px;font-weight:600;color:#e2e8f0;margin-bottom:20px;}
+                .footer-nav__column ul {list-style:none;padding:0;margin:0;}
+                .footer-nav__column ul li {margin-bottom:12px;}
+                .footer-nav__column ul a, .footer-nav__column ul span {color:#94a3b8;text-decoration:none;font-size:14px;transition:color 0.2s;}
+                .footer-nav__column ul a:hover {color:#3b82f6;}
+                
+                /* Contact list */
+                .contact-list li {display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+                .contact-list .icon {width:18px;height:18px;color:#3b82f6;}
+                
+                /* Social links */
+                .social-links {display:flex;gap:12px;margin-top:20px;}
+                .social-links a {width:36px;height:36px;border-radius:50%;background:#1e293b;display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.2s;}
+                .social-links a:hover {background:#3b82f6;color:#fff;transform:translateY(-2px);}
+                .social-links svg {width:18px;height:18px;}
+                
+                /* Footer bottom */
+                .site-footer__bottom {display:flex;flex-direction:column;align-items:center;padding:32px 0;gap:20px;}
+                @media (min-width:640px) {
+                    .site-footer__bottom {flex-direction:row;justify-content:space-between;}
+                }
+                .site-footer__copyright p {color:#64748b;font-size:13px;}
+                .site-footer__links {display:flex;flex-wrap:wrap;gap:24px;}
+                .site-footer__links a {color:#64748b;text-decoration:none;font-size:13px;transition:color 0.2s;}
+                .site-footer__links a:hover {color:#3b82f6;}
+                
+                /* Warning banner */
+                .site-footer__warning {background:#0c111b;padding:14px 0;text-align:center;}
+                .site-footer__warning p {max-width:1000px;margin:0 auto;padding:0 32px;color:#475569;font-size:12px;line-height:1.6;}
+                
+                /* Responsive */
+                @media (max-width:860px) {
+                    .site-footer__main {gap:40px;padding:40px 0 30px;}
+                    .company-info {max-width:100%;}
+                }
+            `}</style>
+        </>
     );
 };
 

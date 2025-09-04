@@ -59,7 +59,7 @@ const Register: React.FC = () => {
         <div className="max-w-2xl mx-auto">
           <div className="tv-card">
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-white mb-2">Bergabung dengan AkuRajaCrypto</h1>
+              <h1 className="text-3xl font-bold text-white mb-2">Bergabung dengan JaliinCrpto</h1>
               <p className="text-tv-text-secondary">Buat akun dan mulai journey trading crypto Anda</p>
             </div>
 
@@ -177,7 +177,7 @@ const Register: React.FC = () => {
                     <Link to="/terms" className="text-tv-blue hover:underline">Syarat dan Ketentuan</Link>
                     {' '}serta{' '}
                     <Link to="/privacy" className="text-tv-blue hover:underline">Kebijakan Privasi</Link>
-                    {' '}AkuRajaCrypto *
+                    {' '}JaliinCrypto
                   </span>
                 </label>
                 {errors.agreeTerms && <p className="text-tv-red text-sm">{errors.agreeTerms}</p>}
