@@ -1,2 +1,2 @@
-# AkuRajaCrypto
+# Crypto
 <!-- ...existing code... -->

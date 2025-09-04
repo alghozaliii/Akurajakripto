@@ -10,8 +10,6 @@ const Header: React.FC = () => {
     { to: '/pricing', label: 'Products' },
     { to: '/community', label: 'Community' },
     { to: '/dashboard', label: 'Markets' },
-    { to: '/brokers', label: 'Brokers' },
-    { to: '/more', label: 'More' }
   ];
 
   const isActiveRoute = (path: string) => location.pathname === path;

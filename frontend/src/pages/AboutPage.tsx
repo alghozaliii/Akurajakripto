@@ -4,7 +4,7 @@ const AboutPage: React.FC = () => {
     return (
         <div>
             <h1>About Us</h1>
-            <p>Welcome to the About Page of AkuRajaCrypto.</p>
+            <p>Welcome to the About Page of JaliinCrypto.</p>
             <p>Here you can add information about your website or application, its purpose, and the team behind it.</p>
         </div>
     );

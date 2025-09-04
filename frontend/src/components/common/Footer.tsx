@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                     {/* Bottom copyright */}
                     <div className="site-footer__bottom">
                         <div className="site-footer__copyright">
-                            <p>© {new Date().getFullYear()} AkuRajaCrypto. All rights reserved.</p>
+                            <p>© {new Date().getFullYear()} JaliinCrypto. All rights reserved.</p>
                         </div>
                         <div className="site-footer__links">
                             <Link to="/privacy">Kebijakan Privasi</Link>
